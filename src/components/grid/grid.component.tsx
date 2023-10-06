@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 
 type Props = PropsWithChildren<{
-  cols: "2" | "3" | "4";
+  cols: "2" | "3";
 }>;
 
 const Grid = ({ children, cols }: Props) => {
