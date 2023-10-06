@@ -1,0 +1,57 @@
+{
+  "tasks": [
+    {
+      "id": "52e4a3b4-f662-4d21-a9ca-3a6c7372c530",
+      "title": "Finish writing FE Docs",
+      "deadline": "31/12/2023"
+    },
+    {
+      "id": "1ed07766-86c5-43a5-8224-a6b5b4148309",
+      "title": "Set up an interview with the new candidate",
+      "deadline": "14/11/2023"
+    },
+    {
+      "id": "3f62821a9-195d-470e-89ec-a63382c01300",
+      "title": "Create a coding challenge for the new candidate",
+      "deadline": "14/12/2023"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "675e339c-947d-4c83-8b05-b4cafea5cbdd",
+      "title": "Ask for feedback from the team",
+      "deadline": "15/10/2023",
+      "taskId": "52e4a3b4-f662-4d21-a9ca-3a6c7372c530"
+    },
+    {
+      "id": "a6030e07-3d28-4ca3-99f0-7e1b11da4c12",
+      "title": "Implement feedback",
+      "deadline": "30/10/2023",
+      "taskId": "52e4a3b4-f662-4d21-a9ca-3a6c7372c530"
+    },
+    {
+      "id": "3ebe8893-730b-4de9-82b3-259cf0db1288",
+      "title": "Schedule the interview",
+      "deadline": "5/11/2023",
+      "taskId": "1ed07766-86c5-43a5-8224-a6b5b4148309"
+    },
+    {
+      "id": "d09a4ac0-3fa4-4448-9dfc-ebe6223245e7",
+      "title": "Confirm the interview",
+      "deadline": "7/11/2023",
+      "taskId": "1ed07766-86c5-43a5-8224-a6b5b4148309"
+    },
+    {
+      "id": "f82cec8a-569a-4df6-b635-5299025b4703",
+      "title": "Create a coding challenge",
+      "deadline": "7/11/2023",
+      "taskId": "3f62821a9-195d-470e-89ec-a63382c01300"
+    },
+    {
+      "id": "6c9a5912-f5fd-47ed-be89-5be935f6577d",
+      "title": "Test the coding challenge",
+      "deadline": "9/11/2023",
+      "taskId": "3f62821a9-195d-470e-89ec-a63382c01300"
+    }
+  ]
+}
