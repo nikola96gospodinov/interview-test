@@ -14,11 +14,9 @@ const Text = ({ children, size }: Props) => {
       case "lg":
         return "text-lg";
     }
-
-    return "text-base"; // default value. This should never happen.
   })();
 
-  return <p className={sizeClass}>{children}</p>;
+  return <p className={`${sizeClass} tracking-wide`}>{children}</p>;
 };
 
 export default Text;

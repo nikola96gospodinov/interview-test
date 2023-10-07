@@ -23,6 +23,9 @@ export const Header = () => {
             >
               Storybook
             </a>
+            <Link className="underline" href="/endpoints">
+              Endpoints
+            </Link>
           </div>
         </div>
       </Container>
