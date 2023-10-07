@@ -9,9 +9,11 @@ export const Header = () => {
       <VerticalSpace size="md" />
       <Container>
         <div className="flex justify-between items-center">
-          <Heading size="md">
-            <span className="text-purple-400">Task </span> Manager
-          </Heading>
+          <Link href="/">
+            <Heading size="md">
+              <span className="text-purple-400">Task </span> Manager
+            </Heading>
+          </Link>
           <div className="flex gap-4">
             <Link className="underline" href="/">
               Homepage
@@ -25,6 +27,9 @@ export const Header = () => {
             </a>
             <Link className="underline" href="/endpoints">
               Endpoints
+            </Link>
+            <Link className="underline" href="/instructions">
+              Instructions
             </Link>
           </div>
         </div>
