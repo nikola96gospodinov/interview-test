@@ -10,15 +10,20 @@ import Input from "@/components/input/input.component";
 import Form from "@/components/form/form.component";
 import { useForm } from "react-hook-form";
 import queryClient from "@/lib/react-query";
+import { formatDate } from "@/utils/dates.utils";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 
 type Props = {
   task: Task;
 };
 
-type Inputs = {
-  title: string;
-  deadline: string;
-};
+const InputSchema = z.object({
+  title: z.string().nonempty({ message: "Title is required" }),
+  deadline: z.string().nonempty({ message: "Deadline is required" }),
+});
+
+type Inputs = z.infer<typeof InputSchema>;
 
 export default function Task({ task }: Props) {
   const { data: subtasks } = useQuery<SubTask[]>({
@@ -31,7 +36,7 @@ export default function Task({ task }: Props) {
     },
   });
 
-  const { mutate: addSubtask } = useMutation({
+  const { mutate: addSubtask, isLoading: isAddingSubtask } = useMutation({
     mutationFn: async ({ title, deadline }: Inputs) => {
       const fetchURL = new URL("/subtasks", API_URL);
       await fetch(fetchURL, {
@@ -52,15 +57,24 @@ export default function Task({ task }: Props) {
     },
   });
 
-  const { register, handleSubmit, reset } = useForm<Inputs>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<Inputs>({
     defaultValues: {
       title: "",
       deadline: "",
     },
+    resolver: zodResolver(InputSchema),
   });
 
   const onSubmit = (data: Inputs) => {
-    addSubtask(data);
+    addSubtask({
+      ...data,
+      deadline: formatDate(data.deadline),
+    });
   };
 
   return (
@@ -79,16 +93,18 @@ export default function Task({ task }: Props) {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
           labelText="Title"
+          errorMessage={errors?.title?.message}
           type="text"
           {...register("title", { required: true })}
         />
         <Input
           labelText="Deadline"
+          errorMessage={errors?.deadline?.message}
           type="date"
           {...register("deadline", { required: true })}
         />
         <VerticalSpace size="sm" />
-        <Button text="Submit" type="submit" />
+        <Button text="Submit" type="submit" disabled={isAddingSubtask} />
       </Form>
     </>
   );

@@ -12,9 +12,18 @@ export const Header = () => {
           <Heading size="md">
             <span className="text-purple-400">Task </span> Manager
           </Heading>
-          <Link className="underline" href="/">
-            Back to homepage
-          </Link>
+          <div className="flex gap-4">
+            <Link className="underline" href="/">
+              Homepage
+            </Link>
+            <a
+              className="underline"
+              href="http://localhost:6006"
+              target="_blank"
+            >
+              Storybook
+            </a>
+          </div>
         </div>
       </Container>
       <VerticalSpace size="md" />

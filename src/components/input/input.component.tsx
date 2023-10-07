@@ -4,16 +4,18 @@ import {
   forwardRef,
   useId,
 } from "react";
+import Text from "../text/text.component";
 
 type Props = DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
 > & {
   labelText: string;
+  errorMessage?: string;
 };
 
 const Input = forwardRef<HTMLInputElement, Props>(function Input(
-  { labelText, ...props },
+  { labelText, errorMessage, ...props },
   ref
 ) {
   const id = useId();
@@ -27,6 +29,11 @@ const Input = forwardRef<HTMLInputElement, Props>(function Input(
         id={id}
         ref={ref}
       />
+      {errorMessage && (
+        <Text size="sm">
+          <span className="text-red-500 block mt-1">{errorMessage}</span>
+        </Text>
+      )}
     </div>
   );
 });

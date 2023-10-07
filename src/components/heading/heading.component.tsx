@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { PropsWithChildren } from "react";
 
 type Props = PropsWithChildren<{
@@ -15,13 +14,9 @@ const Heading = ({ children, size }: Props) => {
       case "lg":
         return "text-4xl";
     }
-
-    return "text-2xl"; // default value. This should never happen.
   })();
 
-  const className = clsx(sizeClass, "font-bold");
-
-  return <h1 className={className}>{children}</h1>;
+  return <h1 className={`${sizeClass} font-bold`}>{children}</h1>;
 };
 
 export default Heading;
