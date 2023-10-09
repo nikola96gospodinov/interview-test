@@ -108,7 +108,9 @@ const Endpoints = () => {
       <div>
         <Text size="lg">
           Base URL:{" "}
-          <span className="text-purple-200">http://localhost:3004</span>
+          <span className="text-purple-200">
+            https://json-server-test-nu.vercel.app/api
+          </span>
         </Text>
         <Text size="lg">
           You can find the base URL as a constant in{" "}
