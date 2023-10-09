@@ -31,6 +31,13 @@ export const Header = () => {
             <Link className="underline" href="/instructions">
               Instructions
             </Link>
+            <a
+              className="underline"
+              href="https://interview-test-mu.vercel.app/"
+              target="_blank"
+            >
+              Finished
+            </a>
           </div>
         </div>
       </Container>
