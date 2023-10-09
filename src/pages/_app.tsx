@@ -5,33 +5,39 @@ import "@/styles/globals.css";
 import { QueryClientProvider } from "@tanstack/react-query";
 import type { AppProps } from "next/app";
 import { Roboto, Signika } from "next/font/google";
+import Head from "next/head";
 
 const roboto = Roboto({ weight: ["500", "700"], subsets: ["latin"] });
 const signika = Signika({ weight: ["300", "500"], subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <style jsx global>{`
-        html {
-          font-family: ${signika.style.fontFamily};
-        }
+    <>
+      <Head>
+        <title>FINISHED</title>
+      </Head>
+      <QueryClientProvider client={queryClient}>
+        <style jsx global>{`
+          html {
+            font-family: ${signika.style.fontFamily};
+          }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-          font-family: ${roboto.style.fontFamily};
-        }
-      `}</style>
-      <main>
-        <Header />
-        <Container>
-          <Component {...pageProps} />
-        </Container>
-      </main>
-    </QueryClientProvider>
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
+            font-family: ${roboto.style.fontFamily};
+          }
+        `}</style>
+        <main>
+          <Header />
+          <Container>
+            <Component {...pageProps} />
+          </Container>
+        </main>
+      </QueryClientProvider>
+    </>
   );
 }

@@ -11,14 +11,15 @@ export const Header = () => {
         <div className="flex justify-between items-center">
           <Link href="/">
             <Heading size="md">
-              <span className="text-purple-400">Task </span> Manager
+              <span className="text-purple-400">Task </span> Manager (FINISHED)
             </Heading>
           </Link>
           <div className="flex gap-4">
             <Link className="underline" href="/">
               Homepage
             </Link>
-            <a
+            {/* Uncomment for local development */}
+            {/* <a
               className="underline"
               href="http://localhost:6006"
               target="_blank"
@@ -37,7 +38,7 @@ export const Header = () => {
               target="_blank"
             >
               Finished
-            </a>
+            </a> */}
           </div>
         </div>
       </Container>
