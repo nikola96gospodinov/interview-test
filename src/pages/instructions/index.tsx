@@ -17,7 +17,7 @@ const Instructions = () => {
               use JSX inline styling or Tailwind classes.
             </li>
             <li>
-              You can see all 8 available components if the{" "}
+              You can see all 8 available components in the{" "}
               <span className="text-purple-200 underline">Storybook</span> tab
             </li>
           </ul>

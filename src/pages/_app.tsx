@@ -1,5 +1,6 @@
 import Container from "@/components/container/container.component";
 import { Header } from "@/components/header";
+import { isLocalEnv } from "@/constants";
 import queryClient from "@/lib/react-query";
 import "@/styles/globals.css";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -11,10 +12,12 @@ const roboto = Roboto({ weight: ["500", "700"], subsets: ["latin"] });
 const signika = Signika({ weight: ["300", "500"], subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const title = isLocalEnv ? "LOCAL" : "FINISHED";
+
   return (
     <>
       <Head>
-        <title>FINISHED</title>
+        <title>{title}</title>
       </Head>
       <QueryClientProvider client={queryClient}>
         <style jsx global>{`
